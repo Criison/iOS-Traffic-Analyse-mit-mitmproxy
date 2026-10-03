@@ -1,5 +1,4 @@
-[README.md](https://github.com/user-attachments/files/33001674/README.md)
-
+[README.md](https://github.com/user-attachments/files/33001829/README.md)
 # DHCP im Heimnetz mitschneiden (Wireshark)
 
 ## Ziel
@@ -14,7 +13,7 @@ Den DHCP-Ablauf (Discover, Offer, Request, Acknowledge) im Heimnetz mit Wireshar
 
 ## Ablauf (DORA)
 
-![DHCP-Paketliste mit Display Filter](screenshots/01_dhcp-paketliste-dora.png)
+![DHCP-Paketliste mit Display Filter](01_dhcp-paketliste-dora.png)
 
 | Nr. | Typ | Quelle → Ziel | Ports (Src → Dst) | Anmerkung |
 |-----|-----|---------------|-------------------|-----------|
@@ -38,11 +37,11 @@ Die gleiche Transaction ID zeigt, dass die sechs Pakete zu einem Ablauf gehören
 | Lease-Zeit | 1 Tag (86400 s) | Offer, Option "IP Address Lease Time" |
 | IP des DHCP-Servers | `192.168.2.136` | Option "DHCP Server Identifier", zugleich Quell-IP der Server-Pakete |
 
-![Angebotene IP-Adresse](screenshots/04_your-client-ip.png)
+![Angebotene IP-Adresse](04_your-client-ip.png)
 
-![Lease-Zeit](screenshots/05_lease-time.png)
+![Lease-Zeit](05_lease-time.png)
 
-![Source- und Destination-Port](screenshots/03_udp-source-port-67.png)
+![Source- und Destination-Port](03_udp-source-port-67.png)
 
 Ausschnitt: Im Paket vom Server ist Source Port 67 und Destination Port 68.
 
@@ -54,7 +53,7 @@ Der Server antwortet auf Discover und Request jeweils zweimal. Alle vier Pakete 
 
 ### NAK (Nr. 573)
 
-![Details des NAK](screenshots/02_nak-paketdetails.png)
+![Details des NAK](02_nak-paketdetails.png)
 
 Davor steht bei Nr. 570 ein Release von 192.168.2.20 an den Server (Transaction ID `0x67a71a03`). Bei Nr. 573 antwortet der Server (192.168.2.136) mit einem NAK an 192.168.2.20, gleiche Transaction ID, Ports 67 → 68.
 
